@@ -1,0 +1,245 @@
+[
+	{
+		"name": "Haunter",
+		"type": "Ghost",
+		"level": 30,
+		"weight_kg": 0.1,
+		"is_shiny": false,
+		"held_item": null,
+		"skills": ["Lick", "Confuse Ray", "Night Shade", "Hypnosis"],
+		"stats": {
+			"hp": 45,
+			"attack": 50,
+			"defense": 45,
+			"sp_attack": 115,
+			"sp_defense": 55,
+			"speed": 95
+		}
+	},
+	{
+		"name": "Bulbasaur",
+		"type": "Grass",
+		"level": 10,
+		"weight_kg": 6.9,
+		"is_shiny": false,
+		"held_item": null,
+		"skills": ["Tackle", "Growl", "Vine Whip", "Razor Leaf"],
+		"stats": {
+			"hp": 45,
+			"attack": 49,
+			"defense": 49,
+			"sp_attack": 65,
+			"sp_defense": 65,
+			"speed": 45
+		}
+	},
+	{
+		"name": "Vaporeon",
+		"type": "Water",
+		"level": 40,
+		"weight_kg": 29.0,
+		"is_shiny": true,
+		"held_item": "Mystic Water",
+		"skills": ["Water Gun", "Aurora Beam", "Acid Armor", "Hydro Pump"],
+		"stats": {
+			"hp": 130,
+			"attack": 65,
+			"defense": 60,
+			"sp_attack": 110,
+			"sp_defense": 95,
+			"speed": 65
+		}
+	},
+	{
+		"name": "Machop",
+		"type": "Fighting",
+		"level": 20,
+		"weight_kg": 19.5,
+		"is_shiny": false,
+		"held_item": "Black Belt",
+		"skills": ["Karate Chop", "Low Kick", "Seismic Toss", "Focus Energy"],
+		"stats": {
+			"hp": 70,
+			"attack": 80,
+			"defense": 50,
+			"sp_attack": 35,
+			"sp_defense": 35,
+			"speed": 35
+		}
+	},
+	{
+		"name": "Eevee",
+		"type": "Normal",
+		"level": 15,
+		"weight_kg": 6.5,
+		"is_shiny": false,
+		"held_item": null,
+		"skills": ["Tackle", "Sand Attack", "Bite", "Baton Pass"],
+		"stats": {
+			"hp": 55,
+			"attack": 55,
+			"defense": 50,
+			"sp_attack": 45,
+			"sp_defense": 65,
+			"speed": 55
+		}
+	},
+	{
+		"name": "Charmander",
+		"type": "Fire",
+		"level": 8,
+		"weight_kg": 8.5,
+		"is_shiny": true,
+		"held_item": "Charcoal",
+		"skills": ["Ember", "Scratch", "Tackle", "Smokescreen"],
+		"stats": {
+			"hp": 39,
+			"attack": 52,
+			"defense": 43,
+			"sp_attack": 60,
+			"sp_defense": 50,
+			"speed": 65
+		}
+	},
+	{
+		"name": "Jolteon",
+		"type": "Electric",
+		"level": 38,
+		"weight_kg": 24.5,
+		"is_shiny": false,
+		"held_item": "Magnet",
+		"skills": ["Thunder Shock", "Pin Missile", "Thunder", "Agility"],
+		"stats": {
+			"hp": 65,
+			"attack": 65,
+			"defense": 60,
+			"sp_attack": 110,
+			"sp_defense": 95,
+			"speed": 130
+		}
+	},
+	{
+		"name": "Hitmonlee",
+		"type": "Fighting",
+		"level": 35,
+		"weight_kg": 49.8,
+		"is_shiny": false,
+		"held_item": null,
+		"skills": ["High Jump Kick", "Mega Kick", "Rolling Kick", "Meditate"],
+		"stats": {
+			"hp": 50,
+			"attack": 120,
+			"defense": 53,
+			"sp_attack": 35,
+			"sp_defense": 110,
+			"speed": 87
+		}
+	},
+	{
+		"name": "Snorlax",
+		"type": "Normal",
+		"level": 40,
+		"weight_kg": 460.0,
+		"is_shiny": false,
+		"held_item": "Leftovers",
+		"skills": ["Body Slam", "Rest", "Snore", "Belly Drum"],
+		"stats": {
+			"hp": 160,
+			"attack": 110,
+			"defense": 65,
+			"sp_attack": 65,
+			"sp_defense": 110,
+			"speed": 30
+		}
+	},
+	{
+		"name": "Vulpix",
+		"type": "Fire",
+		"level": 18,
+		"weight_kg": 9.9,
+		"is_shiny": false,
+		"held_item": null,
+		"skills": ["Ember", "Tail Whip", "Quick Attack", "Confuse Ray"],
+		"stats": {
+			"hp": 38,
+			"attack": 41,
+			"defense": 40,
+			"sp_attack": 50,
+			"sp_defense": 65,
+			"speed": 65
+		}
+	},
+	{
+		"name": "Gengar",
+		"type": "Ghost",
+		"level": 45,
+		"weight_kg": 40.5,
+		"is_shiny": true,
+		"held_item": "Spell Tag",
+		"skills": ["Shadow Ball", "Hypnosis", "Dream Eater", "Sludge Bomb"],
+		"stats": {
+			"hp": 60,
+			"attack": 65,
+			"defense": 60,
+			"sp_attack": 130,
+			"sp_defense": 75,
+			"speed": 110
+		}
+	},
+	{
+		"name": "Pikachu",
+		"type": "Electric",
+		"level": 54,
+		"weight_kg": 6.0,
+		"is_shiny": false,
+		"held_item": null,
+		"skills": [
+			"Thunder Shock",
+			"Quick Attack",
+			"Thunderbolt",
+			"Volt Tackle"
+		],
+		"stats": {
+			"hp": 35,
+			"attack": 55,
+			"defense": 40,
+			"sp_attack": 50,
+			"sp_defense": 50,
+			"speed": 90
+		}
+	},
+	{
+		"name": "Oddish",
+		"type": "Grass",
+		"level": 16,
+		"weight_kg": 5.4,
+		"is_shiny": false,
+		"held_item": "Miracle Seed",
+		"skills": ["Absorb", "Poison Powder", "Sleep Powder", "Acid"],
+		"stats": {
+			"hp": 45,
+			"attack": 50,
+			"defense": 55,
+			"sp_attack": 75,
+			"sp_defense": 65,
+			"speed": 30
+		}
+	},
+	{
+		"name": "Squirtle",
+		"type": "Water",
+		"level": 12,
+		"weight_kg": 9.0,
+		"is_shiny": false,
+		"held_item": "Oran Berry",
+		"skills": ["Water Gun", "Tackle", "Withdraw", "Bubble"],
+		"stats": {
+			"hp": 44,
+			"attack": 48,
+			"defense": 65,
+			"sp_attack": 50,
+			"sp_defense": 64,
+			"speed": 43
+		}
+	}
+]
