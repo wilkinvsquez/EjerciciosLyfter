@@ -37,5 +37,22 @@
 			"sp_defense": 50,
 			"speed": 65
 		}
+	},
+	{
+		"name": "prueba",
+		"type": "Agua",
+		"level": 10,
+		"weight_kg": 10.0,
+		"is_shiny": true,
+		"held_item": "daga",
+		"skills": ["corre", "salta", "nada", "vuela"],
+		"stats": {
+			"hp": 123,
+			"attack": 123,
+			"defense": 123,
+			"sp_attack": 123,
+			"sp_defense": 123,
+			"speed": 123
+		}
 	}
 ]
