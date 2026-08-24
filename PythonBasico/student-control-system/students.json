@@ -1,0 +1,82 @@
+[
+	{
+		"name": "Wilkin Vasquez",
+		"section": "12A",
+		"grades": {
+			"spanish": 80.0,
+			"english": 100.0,
+			"history": 75.0,
+			"science": 78.0
+		}
+	},
+	{
+		"name": "Tatiana Arrieta Quesada",
+		"section": "12A",
+		"grades": {
+			"spanish": 100.0,
+			"english": 100.0,
+			"history": 100.0,
+			"science": 100.0
+		}
+	},
+	{
+		"name": "Marco Solano Rojas",
+		"section": "11B",
+		"grades": {
+			"spanish": 60.0,
+			"english": 55.0,
+			"history": 70.0,
+			"science": 65.0
+		}
+	},
+	{
+		"name": "Daniela Chaves Mora",
+		"section": "10C",
+		"grades": {
+			"spanish": 95.0,
+			"english": 92.0,
+			"history": 98.0,
+			"science": 90.0
+		}
+	},
+	{
+		"name": "Esteban Jimenez Castro",
+		"section": "11B",
+		"grades": {
+			"spanish": 40.0,
+			"english": 45.0,
+			"history": 50.0,
+			"science": 38.0
+		}
+	},
+	{
+		"name": "Fabiola Ureña Vindas",
+		"section": "12A",
+		"grades": {
+			"spanish": 88.0,
+			"english": 91.0,
+			"history": 85.0,
+			"science": 89.0
+		}
+	},
+	{
+		"name": "Kevin Brenes Alfaro",
+		"section": "10C",
+		"grades": {
+			"spanish": 72.0,
+			"english": 68.0,
+			"history": 74.0,
+			"science": 70.0
+		}
+	},
+	{
+		"name": "Andrea Mendez Solis",
+		"section": "11B",
+		"grades": {
+			"spanish": 99.0,
+			"english": 97.0,
+			"history": 95.0,
+			"science": 100.0
+		}
+	}
+]

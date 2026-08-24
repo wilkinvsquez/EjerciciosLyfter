@@ -5,29 +5,35 @@ def start():
         menu= get_menu("main")
         try:
             user_selection = int(input(menu))
+            if user_selection < 1 or user_selection > 9:
+                print("\n[Error] => Opcion inválida, intente de nuevo")
+                continue
+
+            if user_selection == 9:
+                        print("Gracias por su visita, Vuelva pronto!!")
+                        break
+            
+            handle_selection(user_selection)
         except ValueError:
-            print("[Error] => Debe ingresar un numero valido, Intente de nuevo")
+            print("\n[Error] => Debe ingresar un numero valido, Intente de nuevo")
 
-        if user_selection < 1 or user_selection > 9:
-            print("[Error] => Opcion inválida, intente de nuevo")
-            continue
 
-        handle_selection(user_selection)
 
-        return user_selection
+        #return user_selection
 
 def handle_selection(option_selected):
     match option_selected:
         case 1:
             print("==== Ingresar estudiante ====")
             if actions.save_student():
-                print("Se ha registrado el estudiante exitosamente.")
+                print("\nSe ha registrado el estudiante exitosamente.")
             else:
                 print("[Error] => ")
         case 2:
-            print("2. Ver informacion de estudiante")
+            print("\n==== Lista de estudiantes ====")
+            actions.get_students_list()
         case 3:
-            print("3. Ver top 3 con mejor nota")
+            print("\n==== Top 3 Promedios ====")
         case 4:
             print("4. Ver promedio de notas por estudiante")
         case 5:
@@ -49,7 +55,7 @@ def get_menus():
 ==== Sistema de Control de Estudiantes ====
 
 1. Ingresar estudiante
-2. Ver informacion de estudiante
+2. Ver informacion de todos los estudiantes
 3. Ver top 3 con mejor nota
 4. Ver promedio de notas por estudiante
 5. Eliminar estudiante
