@@ -3,7 +3,7 @@ import re, json
 # Option 1: Ingresar estudiante
 STUDENT_PATH = './students.json'
 
-def resquest_non_empty_text(message):
+def request_non_empty_text(message):
     while True:
         value = input(message).strip()
         print(value)
@@ -33,7 +33,7 @@ def student_exists(name, students_list):
     return any(student["name"] == name for student in students_list)
 
 def request_student_info():
-    name = resquest_non_empty_text("Ingrese el el nombre completo del estudiante: ")
+    name = request_non_empty_text("Ingrese el el nombre completo del estudiante: ")
     section = request_section()
     spanish_sub = request_for_number("Digite la nota de Español: ",0,100)
     english_sub = request_for_number("Digite la nota de Inglés: ",0,100)
@@ -67,6 +67,34 @@ def save_student():
         create_file(STUDENT_PATH, json.dumps(students_list))
         return True
 
+# Option 2: Ver todos los estudiantes
+def get_students_list():
+    try:
+        students_list = list(read_file(STUDENT_PATH))
+        for index, student in enumerate(students_list) : 
+            print(f"{index + 1}. {student["name"]} -> Seccion {student["section"]}")
+
+    except FileNotFoundError:
+        print("[info] => No existen registro de estudiantes")
+
+# Option 3: Ver top 3 con mejor nota
+def calc_grade_average(grades):
+    average = 0
+    for grade in grades.values():
+        average += grade
+    return average / len(grades)
+
+def get_grades_averages():
+    student_list_averages = []
+    student_list = list(read_file(STUDENT_PATH))
+    for student in student_list:
+        average= calc_grade_average(student["grades"])
+        student_list_averages.append({student["name"]:average})
+    return student_list_averages
+
+def get_top_three_average(student_averages):
+    print("Quede aqui")
+
 #General
 def read_file(file_path):
     with open(file_path, 'r') as file:
@@ -77,5 +105,7 @@ def read_file(file_path):
 def create_file(path, content):
     with open(path, "w", encoding='utf-8') as file:
         file.write(content)
+
+
 
 
