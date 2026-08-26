@@ -89,11 +89,14 @@ def get_grades_averages():
     student_list = list(read_file(STUDENT_PATH))
     for student in student_list:
         average= calc_grade_average(student["grades"])
-        student_list_averages.append({student["name"]:average})
+        student_list_averages.append({"name":student["name"],"average":average})
     return student_list_averages
 
-def get_top_three_average(student_averages):
-    print("Quede aqui")
+def get_top_three_average():
+    averages= get_grades_averages()
+    sorted_list = sorted(averages, key=lambda student: student["average"], reverse=True)[:3]
+    for index, student in enumerate(sorted_list):
+        print(f"{index + 1}.{student["name"]} => {student["average"]}")
 
 #General
 def read_file(file_path):

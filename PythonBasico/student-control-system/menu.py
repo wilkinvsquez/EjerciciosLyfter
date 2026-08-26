@@ -34,6 +34,7 @@ def handle_selection(option_selected):
             actions.get_students_list()
         case 3:
             print("\n==== Top 3 Promedios ====")
+            actions.get_top_three_average()
         case 4:
             print("4. Ver promedio de notas por estudiante")
         case 5:
