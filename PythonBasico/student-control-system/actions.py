@@ -2,6 +2,7 @@ import re, json
 
 # Option 1: Ingresar estudiante
 STUDENT_PATH = './students.json'
+MIN_GRADE = 60
 
 def request_non_empty_text(message):
     """Keeps asking until the user enters non-empty, letters-only text."""
@@ -141,6 +142,14 @@ def delete_student(student_name):
 
     save_students(student_list_updated)
     print(f"Se eliminó al estudiante '{student_name}' exitosamente.")
+
+def get_reproved_students():
+    """Returns a list of reproved students"""
+
+    students_averages = get_grades_averages()
+    reproved = [student for student in students_averages if student["average"] < MIN_GRADE]
+    print_numbered_list(reproved, lambda student: f"{student['name']} -> {student['average']}")
+
 
 #General
 def read_file(file_path):
