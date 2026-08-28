@@ -1,0 +1,7 @@
+print("Suma: ", 1+1)
+print("Multiplicación: ", 2*3)
+print("División: ", 10/2)
+print("Resta: ", 5-3)
+print("Potencia: ", 2**3)
+print("Módulo: ", 10%3)
+print("División entera: " , 10//3)
