@@ -1,4 +1,6 @@
-import actions
+import actions, data
+from tkinter import Tk, filedialog
+import csv
 
 def start():
     while True:
@@ -24,7 +26,7 @@ def start():
 def handle_selection(option_selected):
     match option_selected:
         case 1:
-            print("==== Ingresar estudiante ====")
+            print("\n==== Ingresar estudiante ====")
             if actions.save_student():
                 print("\nSe ha registrado el estudiante exitosamente.")
             else:
@@ -36,24 +38,22 @@ def handle_selection(option_selected):
             print("\n==== Top 3 Promedios ====")
             actions.get_top_three_average()
         case 4:
-            print("4. Ver promedio de notas por estudiante")
+            print("\n==== Ver promedio de notas por estudiante ====")
             student_name = actions.request_student_name()
             actions.get_student_avg(student_name)
             
         case 5:
-            print("5. Eliminar estudiante")
+            print("\n==== Eliminar estudiante ====")
             student_name = actions.request_student_name()
             actions.delete_student(student_name)
         case 6:
-            print("6. Ver estudiantes reprobados")
+            print("\n==== Ver estudiantes reprobados ====")
+            actions.get_reproved_students()
         case 7:
-            print("7. Exportar datos a csv")
-        case 8:
-            print("8. Importar datos de csv")
-
-
-
-
+            print("\n==== Exportar datos a csv ====")
+        case 8: 
+            print("\n==== Importar datos de csv ====")
+            data.import_student_csv()
 
 def get_menus():
     return {
