@@ -1,10 +1,10 @@
 import json
 
 FILE_PATH = "./Pokemon.json"
-NEW_FILE_PATH = "./Pokemon.json"
+
 NEW_POKEMON= {
 		"name": "Charmander_test",
-		"type": "Fire",
+		"pokemon_type": "Fire",
 		"level": 8,
 		"weight_kg": 8.5,
 		"is_shiny": True,
@@ -34,6 +34,6 @@ def write_json_file(file_path, content):
 def main():
     pokemon_list = read_file(FILE_PATH)
     pokemon_list.append(NEW_POKEMON)
-    write_json_file(NEW_FILE_PATH,json.dumps(pokemon_list))
+    write_json_file(FILE_PATH, json.dumps(pokemon_list))
 
 main()

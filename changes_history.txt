@@ -1,0 +1,28 @@
+Historial de cambios del repositorio
+======================================
+
+Commit: 6d0847b
+Qué cambió: Se agregaron varios scripts de Python para manejo de archivos CSV,
+diccionarios, manejo de excepciones y manipulación de JSON.
+Por qué: Corresponde a los ejercicios prácticos del cursor de Python en Lyfter,
+consolidando en un solo commit el trabajo hecho sobre estos temas.
+
+Commit: 4e5aff2
+Qué cambió: Se agregaron soluciones en pseudocódigo para ejercicios de cálculo
+de precios, comparación de horas, sumatorias, intercambio de variables,
+conversión de velocidad y cálculo de porcentaje de género.
+Por qué: Ejercicios correspondientes al cursor de algoritmos de UNED, resueltos
+en pseudocódigo antes de pasar a implementación en un lenguaje real.
+
+Commit: 235fd93
+Qué cambió: Se agregaron algoritmos para tareas como preparación de examen,
+planificación de fiesta sorpresa, rutina diaria, preparación de viaje,
+visualización de videos de YouTube y ejercicios de terminal.
+Por qué: Ejercicios de lógica algorítmica orientados a practicar la estructura
+de pseudocódigo y flujogramas antes de programar.
+
+Commit: 0039204
+Qué cambió: Commit inicial del repositorio, creando la estructura base del
+proyecto donde se alojarían los ejercicios del cursor.
+Por qué: Es el punto de partida del repositorio, necesario para empezar a
+versionar el trabajo con Git y sincronizarlo con GitHub.
