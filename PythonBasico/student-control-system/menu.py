@@ -1,36 +1,29 @@
-import actions, data
-from tkinter import Tk, filedialog
-import csv
+import actions
 
 def start():
     while True:
         menu= get_menu("main")
         try:
             user_selection = int(input(menu))
-            if user_selection < 1 or user_selection > 9:
-                print("\n[Error] => Opcion inválida, intente de nuevo")
-                continue
-
-            if user_selection == 9:
-                        print("Gracias por su visita, Vuelva pronto!!")
-                        break
-            
-            handle_selection(user_selection)
         except ValueError:
             print("\n[Error] => Debe ingresar un numero valido, Intente de nuevo")
+            continue
 
+        if user_selection < 1 or user_selection > 9:
+            print("\n[Error] => Opcion inválida, intente de nuevo")
+            continue
 
-
-        #return user_selection
+        if user_selection == 9:
+            print("Gracias por su visita, Vuelva pronto!!")
+            break
+        
+        handle_selection(user_selection)
 
 def handle_selection(option_selected):
     match option_selected:
         case 1:
             print("\n==== Ingresar estudiante ====")
-            if actions.save_student():
-                print("\nSe ha registrado el estudiante exitosamente.")
-            else:
-                print("[Error] => ")
+            actions.save_student()
         case 2:
             print("\n==== Lista de estudiantes ====")
             actions.get_students_list()
@@ -45,15 +38,18 @@ def handle_selection(option_selected):
         case 5:
             print("\n==== Eliminar estudiante ====")
             student_name = actions.request_student_name()
-            actions.delete_student(student_name)
+            section = actions.request_section()
+            actions.delete_student(student_name, section)
         case 6:
             print("\n==== Ver estudiantes reprobados ====")
             actions.get_reproved_students()
         case 7:
             print("\n==== Exportar datos a csv ====")
+            actions.export_CSV_student_list()
+
         case 8: 
             print("\n==== Importar datos de csv ====")
-            data.import_student_csv()
+            actions.import_student_list()
 
 def get_menus():
     return {
