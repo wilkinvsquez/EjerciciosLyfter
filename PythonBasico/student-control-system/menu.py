@@ -32,8 +32,7 @@ def handle_selection(option_selected):
             actions.get_top_three_average()
         case 4:
             print("\n==== Ver promedio de notas por estudiante ====")
-            student_name = actions.request_student_name()
-            actions.get_student_avg(student_name)
+            actions.get_students_avg()
             
         case 5:
             print("\n==== Eliminar estudiante ====")

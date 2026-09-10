@@ -108,18 +108,14 @@ def get_top_three_average():
     print_numbered_list(sorted_list, lambda student: f"{student['name']} => {student['average']}")
 
 # Option 4: Ver promedio de notas por estudiante
-def get_student_avg(student_name):
-    """Prints a specific student's grade average, or a not-found message."""
+def get_students_avg():
+    """Prints all students' grade averages."""
 
-    students = data.get_students()
-    matching_students = [student for student in students if student["name"] == student_name]
-    if not matching_students:
-        print(f"No se encontró ningún estudiante con el nombre '{student_name}'. \nIntenta colocando el nombre completo del estudiante.")
+    averages = get_grades_averages()
+    if not averages:
+        print("[info] => No existen registro de estudiantes")
         return
-
-    student = matching_students[0]
-    average = calc_grade_average(student)
-    print(f"{student['name']} => {average}")
+    print_numbered_list(averages, lambda s: f"{s['name']} => {s['average']}")
     
 # Option 5: Eliminar estudiante
 def delete_student(student_name, student_section):
