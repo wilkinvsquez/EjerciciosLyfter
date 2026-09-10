@@ -1,8 +1,7 @@
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename,asksaveasfilename
-import json, csv
+import csv
 
-STUDENT_PATH = './students.json'
 MIN_GRADE = 60
 SUBJECT_LABELS = {
     "spanish": "Español",
@@ -47,30 +46,8 @@ def build_student_from_row(row):
         student[key] = float(row[key])
     return student
 
-def get_students():
-    """Returns the list of saved students, or an empty list if none exist yet."""
-    try:
-        return read_json_file(STUDENT_PATH)
-    except (FileNotFoundError, json.JSONDecodeError):
-        return []
-
-def save_students(students_list):
-    """Overwrites the students file with the given list."""
-    create_json_file(STUDENT_PATH, json.dumps(students_list, ensure_ascii=False, indent=2))
-
-def read_json_file(file_path):
-    """Reads and parses a JSON file."""
-    with open(file_path, 'r', encoding='utf-8') as file:
-        text_content = file.read()
-        return json.loads(text_content)
-
 def read_csv_file(file_path):
     """Reads a CSV file and returns a list of row dictionaries."""
     with open(file_path, 'r', encoding='utf-8') as file:
         reader = csv.DictReader(file)
         return list(reader)
-
-def create_json_file(path, content):
-    """Writes text content to a file, overwriting it if it already exists."""
-    with open(path, "w", encoding='utf-8') as file:
-        file.write(content)

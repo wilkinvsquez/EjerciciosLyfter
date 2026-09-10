@@ -46,39 +46,28 @@ def request_student_info():
     name = request_non_empty_text("Ingrese el nombre completo del estudiante: ")
     section = request_section()
 
-    student = {
-        "name": name,
-        "section": section,
-    }
+    student = {"name": name, "section": section}
     for key, label in data.SUBJECT_LABELS.items():
         student[key] = request_for_number(f"Digite la nota de {label}: ", 0, 100)
 
     return student
 
 
-def save_student():
+def save_student(students_list):
     """Registers a new student, unless one with the same name already exists.
-
     Returns:
         bool: True if the student was saved, False if it already existed.
     """
-    students_list = data.get_students()
-    if not students_list:
-        print("[info] => No existen registro de estudiantes, se creara uno nuevo")
     student = request_student_info()
     if student_exists(student["name"], student["section"], students_list):
-        print("El estudiante ya se encuentra registrado.")
         return False
-    else:
-        students_list.append(student)
-        data.save_students(students_list)
-        return True
+    students_list.append(student)
+    return True
 
 # Option 2: Ver todos los estudiantes
-def get_students_list():
+def get_students_list(students_list):
         """Prints every saved student with their section."""
 
-        students_list = data.get_students()
         if not students_list:
             print("[info] => No existen registro de estudiantes")
             return
@@ -91,37 +80,32 @@ def calc_grade_average(student):
     grades = [student[key] for key in data.SUBJECT_LABELS.keys()]
     return sum(grades) / len(grades)
 
-def get_grades_averages():
+def get_grades_averages(students_list):
     """Returns a list of {name, average} for every saved student."""
 
-    student_list_averages = []
-    for student in data.get_students():
-        average = calc_grade_average(student)
-        student_list_averages.append({"name" : student["name"], "average" : average})
-    return student_list_averages
+    return [{"name": student["name"], "average": calc_grade_average(student)} for student in students_list]
 
-def get_top_three_average():
+def get_top_three_average(students_list):
     """Prints the top 3 students with the highest grade average."""
 
-    averages= get_grades_averages()
+    averages= get_grades_averages(students_list)
     sorted_list = sorted(averages, key = lambda student: student["average"], reverse = True)[:3]
     print_numbered_list(sorted_list, lambda student: f"{student['name']} => {student['average']}")
 
 # Option 4: Ver promedio de notas por estudiante
-def get_students_avg():
+def get_students_avg(students_list):
     """Prints all students' grade averages."""
 
-    averages = get_grades_averages()
+    averages = get_grades_averages(students_list)
     if not averages:
         print("[info] => No existen registro de estudiantes")
         return
     print_numbered_list(averages, lambda s: f"{s['name']} => {s['average']}")
     
 # Option 5: Eliminar estudiante
-def delete_student(student_name, student_section):
+def delete_student(student_name, student_section, students_list):
     """Removes a student by name and section, after confirming with the user."""
-    student_list = data.get_students()
-    if not student_exists(student_name, student_section, student_list):
+    if not student_exists(student_name, student_section, students_list):
         print(f"No se encontró ningún estudiante '{student_name}' en la sección '{student_section}'.")
         return
 
@@ -129,8 +113,7 @@ def delete_student(student_name, student_section):
         print("Operación cancelada.")
         return
 
-    updated_list = [s for s in student_list if not (s["name"] == student_name and s["section"] == student_section)]
-    data.save_students(updated_list)
+    students_list[:] = [s for s in students_list if not (s["name"] == student_name and s["section"] == student_section)]
     print(f"Se eliminó al estudiante '{student_name}' exitosamente.")
 
 def request_confirmation(message):
@@ -144,9 +127,8 @@ def request_confirmation(message):
         print("Respuesta inválida. Escriba 's' o 'n'.")
 
 # Option 6: Ver estudiantes reprobados
-def get_reproved_students():
+def get_reproved_students(students_list):
     """Prints every student with at least one failing grade, along with the failed subjects."""
-    students_list = data.get_students()
     if not students_list:
         print("[info] => No existen registro de estudiantes")
         return
@@ -171,21 +153,20 @@ def get_failed_subjects(student):
     ]
 
 # Option 7: Exportar datos a csv
-def export_CSV_student_list():
+def export_CSV_student_list(students_list):
     """Exports all saved students to a CSV file chosen by the user."""
-    student_list = data.get_students()
-    if not student_list:
+    if not students_list:
         print("[info] => No hay estudiantes para exportar")
         return
 
     file_path = data.request_export_path()
     fieldnames = ["name", "section"] + list(data.SUBJECT_LABELS.keys())
 
-    data.export_students(student_list, fieldnames, file_path)
+    data.export_students(students_list, fieldnames, file_path)
     print(f"Estudiantes exportados exitosamente a '{file_path}'")
 
 # Option 8: Importar datos de csv
-def import_student_list():
+def import_student_list(students_list):
     """Merges the students from a CSV file into the saved students, skipping duplicates."""
     file_path = data.import_student_csv()
     if not file_path:
@@ -198,16 +179,13 @@ def import_student_list():
         print(f"[Error] => No se encontró el archivo '{file_path}'.")
         return
 
-    current_students = data.get_students()
-    importation_students = [data.build_student_from_row(row) for row in importation_rows]
-
-    for student in importation_students:
-        if student_exists(student["name"], student["section"], current_students):
+    for row in importation_rows:
+        student = data.build_student_from_row(row)
+        if student_exists(student["name"], student["section"], students_list):
             print(f"'{student['name']}' ya se encuentra registrado, se omite.")
         else:
-            current_students.append(student)
+            students_list.append(student)
 
-    data.save_students(current_students)
     print("Students imported succesfully")
 
 #General
