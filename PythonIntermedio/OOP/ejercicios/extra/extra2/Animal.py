@@ -1,9 +1,9 @@
 class Animal:
-    def __init__(self):
-        pass
+    def __init__(self, name):
+        self.name = name
 
     def speak(self):
-        pass
+        return "Hace un sonido"
 
 class Dog(Animal):
     def speak(self):
@@ -14,8 +14,8 @@ class Cat(Animal):
         return "Miau"
 
 
-cat = Cat()
-dog = Dog()
+cat = Cat("Michi")
+dog = Dog("Firulais")
 
 print(cat.speak())
 print(dog.speak())
