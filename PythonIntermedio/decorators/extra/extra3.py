@@ -1,5 +1,7 @@
 from datetime import datetime
+from functools import wraps
 def log_call(func):
+    @wraps(func)
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
         args_str = ", ".join(str(a) for a in args)
@@ -9,6 +11,7 @@ def log_call(func):
     return wrapper
 
 def validate_numbers(func):
+    @wraps(func)
     def wrapper(*args, **kwargs):
         for param in (*args, *kwargs.values()):
             if not isinstance(param, (int, float)):
