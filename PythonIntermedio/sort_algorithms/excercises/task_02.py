@@ -30,4 +30,5 @@ def bubble_sort(number_list):
         print("-" * 60)
 
 test_list = [18, -11, 68, 6, 32, 53, -2]
-bubble_sort(test_list)
+test_list2 = [9,8,7,6,5,4,3,2,1]
+bubble_sort(test_list2)
