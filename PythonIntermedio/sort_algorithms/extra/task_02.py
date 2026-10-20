@@ -1,6 +1,6 @@
 # 01: BUBBLE_SORT WITH ITERATIONS AND CHANGES
 
-def bubble_sort(number_list):
+def bubble_sort_steps(number_list):
     iteration_counter = 0
     changes_counter = 0
     print(f"Lista Inicial: {number_list}")
@@ -28,4 +28,4 @@ def bubble_sort(number_list):
 
 test_list = [18, -11, 68, 6, 32, 53, -2]
 test_list2 = [5,4,3,2,1]
-bubble_sort(test_list2)
+bubble_sort_steps(test_list2)
