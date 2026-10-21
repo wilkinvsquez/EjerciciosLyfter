@@ -1,5 +1,5 @@
 import pytest
-from sort_algorithms.excercises.task_01 import bubble_sort
+from PythonIntermedio.sort_algorithms.excercises.task_01 import bubble_sort
 
 def test_bubble_sort_short_list():
     original_list = [18, -11, 68, 6, 32, 53, -2]
