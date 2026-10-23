@@ -1,5 +1,6 @@
 # 01: BUBBLE_SORT
 
+# El mejor caso es : O(n) y el peor caso es O(n^2)
 def bubble_sort(number_list):
     indent_1 = "    "                                                                               # O(1)
     indent_2 = "        "                                                                           # O(1)
