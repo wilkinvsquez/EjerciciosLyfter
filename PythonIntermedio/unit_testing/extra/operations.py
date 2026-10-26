@@ -16,3 +16,8 @@ def celsius_a_fahrenheit(value):
     if not isinstance(value, (int, float)):
         raise TypeError("[Error]: El valor a convertir no es numerico")
     return value * 9 / 5 + 32
+
+def divide(number1, number2):
+    if number2 == 0:
+        raise ValueError("No se puede dividir por cero")
+    return number1 / number2
