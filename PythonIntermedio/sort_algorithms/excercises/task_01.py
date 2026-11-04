@@ -24,10 +24,11 @@ def bubble_sort(number_list):
             print(f"{indent_2}Number List updated: {number_list}")
         if not changes_made:
             print("\nNo hubo cambios, la lista ya está ordenada.")
-            return
+            return number_list
 
         print(f"\n{indent_1}Resultado {outer_index}: {number_list}")
         print("-" * 60)
+    return number_list
 
 test_list = [18, -11, 68, 6, 32, 53, -2]
 bubble_sort(test_list)
